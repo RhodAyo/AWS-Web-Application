@@ -99,3 +99,6 @@ Inbound rule for SG:
  - Your instance is ready when you see “2/2 check passed” (it might take a few minutes)
 
 ![N.Virginia Location](images/EC2_Launch_Success.png)
+
+S
+
