@@ -100,5 +100,40 @@ Inbound rule for SG:
 
 ![N.Virginia Location](images/EC2_Launch_Success.png)
 
-S
+- Select the Instance launched, to proceed with connections, Instance state, and other Actions.
 
+![N.Virginia Location](images/Connect_EC2Instances.png)
+
+- Click the 'Connect' to connect to SSH
+![N.Virginia Location](images/Connect_SSH.png)
+
+### 7. Install Apache Web Server
+- SSH into the instance as shown in the image above.
+- Go to the location where you downloaded your keypair, mine was under 'Downloads'.
+- Right-click on any space and select the “git bash here” or "Open in Terminal" for Ubuntu
+
+Note: You would encounter errors like the image below if you skip number 3 rule 'Run this command, if necessary, to ensure your key is not publicly viewable'
+
+![N.Virginia Location](images/Error_Connecting_ssh.png)
+
+- After following the steps specified in the AWS connect to SSH console, enter in the code provided in the 'Example' text, but verify username of key pair:
+
+![N.Virginia Location](images/Installing_Apache.png)
+
+- Run the following commands to install Apache:
+  sudo yum update -y
+  sudo yum install httpd -y
+  sudo systemctl start httpd
+  sudo systemctl enable httpd
+
+![N.Virginia Location](images/Installing_Apache_2.png)
+
+- The last two commands above follow each other as specified in the image below:
+
+![N.Virginia Location](images/Installing_Apache_3.png)
+
+- Finally, paste in a new browser tab, the public IP provided in your EC2 Instance, in this project it was "http://3.85.209.72/"
+
+  ![N.Virginia Location](images/Launched_Web_App.png)
+
+  Congratulations! You have successfully used the resources provided by AWS to deploy a web application infrastructure :)
